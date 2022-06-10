@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  svc:
+    build: ./Service
+    ports:
+      - "8080:8080"
+  sidecar:
+    build: ./Sidecar
+    ports:
+      - "7138:7138"
+    env_file:
+      - ./Sidecar/.env
